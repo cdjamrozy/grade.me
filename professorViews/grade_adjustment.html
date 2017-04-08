@@ -7,6 +7,76 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <!--graph stuff-->
+  <script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+            theme: "theme1",
+                        animationEnabled: true,
+            title:{
+                text: "Grade Distribution",
+                fontSize: 30
+            },
+            toolTip: {
+                shared: true
+            },
+            axisY: {
+                title: "Number of Students",
+                interval: 20
+            },
+            axisY2: {
+                interval: 20
+            },
+            data: [
+            {
+                type: "column",
+                name: "Old Grades",
+                legendText: "Old Grades",
+                showInLegend: true,
+                dataPoints:[
+                {label: "A", y: 62},
+                {label: "B", y: 78},
+                {label: "C", y: 80},
+                {label: "D", y: 42},
+                {label: "F", y: 12},
+                ]
+            },
+            {
+                type: "column",
+                name: "New Grades",
+                legendText: "New Grades",
+                axisYType: "secondary",
+                showInLegend: true,
+                dataPoints:[
+                {label: "A", y: 72},
+                {label: "B", y: 86},
+                {label: "C", y: 92},
+                {label: "D", y: 20},
+                {label: "F", y: 4},
+                ]
+            }
+
+            ],
+          legend:{
+            cursor:"pointer",
+            itemclick: function(e){
+              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+              }
+              else {
+                e.dataSeries.visible = true;
+              }
+                chart.render();
+            }
+          },
+        });
+
+chart.render();
+}
+</script>
+  <script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
 
@@ -144,7 +214,7 @@
       </table>
     </div>
     <div class="col-sm-4">
-      <p>SINGLE GRAPH</p>
+      <div id="chartContainer" style="height:400px; width:100%;" />
     </div>
   </div>
 </div>
