@@ -7,15 +7,92 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <!--graph stuff-->
+  <script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+            theme: "theme1",
+                        animationEnabled: true,
+            title:{
+                text: "Grade Distribution",
+                fontSize: 30
+            },
+            toolTip: {
+                shared: true
+            },
+            axisY: {
+                title: "Number of Students",
+                interval: 20
+            },
+            axisY2: {
+                interval: 20
+            },
+            data: [
+            {
+                type: "column",
+                name: "Old Grades",
+                legendText: "Old Grades",
+                showInLegend: true,
+                dataPoints:[
+                {label: "A", y: 62},
+                {label: "B", y: 78},
+                {label: "C", y: 80},
+                {label: "D", y: 42},
+                {label: "F", y: 12},
+                ]
+            },
+            {
+                type: "column",
+                name: "New Grades",
+                legendText: "New Grades",
+                axisYType: "secondary",
+                showInLegend: true,
+                dataPoints:[
+                {label: "A", y: 72},
+                {label: "B", y: 86},
+                {label: "C", y: 92},
+                {label: "D", y: 20},
+                {label: "F", y: 4},
+                ]
+            }
+
+            ],
+          legend:{
+            cursor:"pointer",
+            itemclick: function(e){
+              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+              }
+              else {
+                e.dataSeries.visible = true;
+              }
+                chart.render();
+            }
+          },
+        });
+
+chart.render();
+}
+</script>
+
+<!--<style>
+.jumbotron{
+  background-color:#C064C8 !important;
+}
+</style>-->
+
 </head>
 <body>
 
-<div style="background:transparent !important" class="jumbotron text-center">
+<div class="jumbotron text-center">
   <h1>Assignment View</h1>
   <p>Resize this responsive page to see the effect!</p>
 </div>
 
-<div class="container">
+<div class="container" color>
   <div class="row">
     <div class="col-sm-6">
       <table class="table">
@@ -80,16 +157,26 @@
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbox" style=" width:100%; height: 300px !important;">
           <div class="item active">
-            <img src="sampleImgs/0fR0RmH.jpg" alt="Chania">
+            <image src="graphImages/gradeHist.png" />
           </div>
 
           <div class="item">
-            <img src="sampleImgs/1oFmnFg.jpg" alt="Chania">
+            <image src="graphImages/gradeScatter.png" />
+          </div>
+
+          <div class="item">
+            <image src="graphImages/gradeBox.png" />
+          </div>
+
+          <div class="item">
+            <image src="graphImages/gradeLine.png" />
           </div>
         </div>
 
