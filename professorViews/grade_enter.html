@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Grade Enter</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -17,50 +17,81 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h1>My First Bootstrap Page</h1>
+  <h1>Grade Enter</h1>
   <p>Resize this responsive page to see the effect!</p>
 </div>
 
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <table class = "table">
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form>
+                <tr>
+                    <td>Wiktoria Niemec</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Jan Ząbek</td>
+                    <td><input type="number" class="form-control" id="grade" max="100" min="0"></td>
+                </tr>
+                <tr>
+                    <td>Krystyna Sokal</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Zbigniew Adamczyk</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Kunegunda Wawrzaszek</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Marcelina Ziemniak</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Andżelika Sokolof</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Ferdynand Jordan</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Dawid Kijek</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Sławomir Gniewek</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Salomea Kozlowski</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Weronika Smolák</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Lechosław Sobol</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Tatiana Salomon</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+            </form>
+        </tbody>
+      </table>
     </div>
     <!--GRAPH WILL GO IN THIS DIV-->
     <div id="graphDiv" class="col-sm-6" data-spy="affix" data-offset-top="205">
@@ -70,6 +101,13 @@
     </div>
   </div>
 </div>
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4" style="padding-bottom:20px">
+        <button type="submit" class="btn btn-success btn-block">Submit</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
