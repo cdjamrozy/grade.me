@@ -7,6 +7,61 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <!--graph stuff-->
+  <script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+            theme: "theme1",
+                        animationEnabled: true,
+            title:{
+                text: "Grade Distribution",
+                fontSize: 30
+            },
+            toolTip: {
+                shared: true
+            },
+            axisY: {
+                title: "Number of Students",
+                interval: 20
+            },
+            axisY2: {
+                interval: 20
+            },
+            data: [
+            {
+                type: "column",
+                name: "Old Grades",
+                legendText: "Old Grades",
+                showInLegend: false,
+                dataPoints:[
+                {label: "A", y: 62},
+                {label: "B", y: 78},
+                {label: "C", y: 80},
+                {label: "D", y: 42},
+                {label: "F", y: 12},
+                ]
+            }
+
+            ],
+          legend:{
+            cursor:"pointer",
+            itemclick: function(e){
+              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+              }
+              else {
+                e.dataSeries.visible = true;
+              }
+                chart.render();
+            }
+          },
+        });
+
+chart.render();
+}
+</script>
   <style>
     .affix {
         top: 30px;
@@ -95,9 +150,7 @@
     </div>
     <!--GRAPH WILL GO IN THIS DIV-->
     <div id="graphDiv" class="col-sm-6" data-spy="affix" data-offset-top="205">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <div id="chartContainer" style="height:400px; width:100%;" />
     </div>
   </div>
 </div>
