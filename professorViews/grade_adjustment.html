@@ -9,11 +9,70 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="jquery-3.2.0.min.js"></script>
   <!--graph stuff-->
   <script type="text/javascript">
-    window.onload = function () {
+    showGraph = function () {
+        CanvasJS.addColorSet("blue", ["#2c74e8"]);
         var chart = new CanvasJS.Chart("chartContainer",
         {
+
+            colorSet: "blue",
+
+            theme: "theme1",
+                        animationEnabled: true,
+            title:{
+                text: "Grade Distribution",
+                fontSize: 30
+            },
+            toolTip: {
+                shared: true
+            },
+            axisY: {
+                title: "Number of Students",
+                interval: 20
+            },
+            axisY2: {
+                interval: 20
+            },
+            data: [
+            {
+                type: "column",
+                name: "Old Grades",
+                legendText: "Old Grades",
+                showInLegend: true,
+                dataPoints:[
+                {label: "A", y: 62},
+                {label: "B", y: 78},
+                {label: "C", y: 80},
+                {label: "D", y: 42},
+                {label: "F", y: 12},
+                ]
+            },
+
+            ],
+          legend:{
+            cursor:"pointer",
+            itemclick: function(e){
+              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+              }
+              else {
+                e.dataSeries.visible = true;
+              }
+                chart.render();
+            }
+          },
+        });
+
+chart.render();
+}
+
+showGraph2 = function () {
+        CanvasJS.addColorSet("bluered", ["#2c74e8", "#1af437"]);
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+            colorSet: "bluered",
             theme: "theme1",
                         animationEnabled: true,
             title:{
@@ -81,6 +140,7 @@ chart.render();
 <body>
 
 <div class="jumbotron text-center">
+<a style="position: absolute; top: 5px; left: 5px" href="assignment_view.html">Back</a>
   <h1>Grade Adjustment</h1>
   <p>Resize this responsive page to see the effect!</p>
 </div>
@@ -94,7 +154,7 @@ chart.render();
       <div class="col-xs-1"><input type="text" class="form-control" id="exp" maxlength="1"></div>
       <div class="col-xs-1"> + </div>
       <div class="col-xs-2"><input type="number" class="form-control" id="add"></div>
-      <div class="col-xs-2"><button type="button" class="btn btn-success">Try Adjustment</button></div>
+      <div class="col-xs-2"><button type="button" class="btn btn-success" onclick="adjustGrades()">Try Adjustment</button></div>
     </div>
   </div>
 </div>
@@ -168,55 +228,97 @@ chart.render();
         <tbody>
           <tr>
             <td>Mean</td>
-            <td><font color = "green">79.2</font></td>
+            <td id = "new"><font color = "green">79.2</font></td>
           </tr>
           <tr>
             <td>Median</td>
-            <td><font color = "green">82.1</font></td>
+            <td id = "new1"><font color = "green">82.1</font></td>
           </tr>
           <tr>
             <td>First Quartile</td>
-            <td><font color = "green">76</font></td>
+            <td id = "new2"><font color = "green">76</font></td>
           </tr>
           <tr>
             <td>Third Quartile</td>
-            <td>86</td>
+            <td id = "new3"><font>86</font></td>
           </tr>
           <tr>
             <td>Standard Deviation</td>
-            <td><font color = "red">9.3</font></td>
+            <td id = "new4"><font color = "red">9.3</font></td>
           </tr>
           <tr>
             <td>Variance</td>
-            <td><font color = "red">86.49</font></td>
+            <td id = "new5"><font color = "red">86.49</font></td>
           </tr>
           <tr>
             <td># of Students with A</td>
-            <td><font color = "green">43</font></td>
+            <td id = "new6"><font color = "green">43</font></td>
           </tr>
           <tr>
             <td># of Students with B</td>
-            <td><font color = "red">34</font></td>
+            <td id = "new7"><font color = "red">34</font></td>
           </tr>
           <tr>
             <td># of Students with C</td>
-            <td><font color = "red">32</font></td>
+            <td id = "new8"><font color = "red">32</font></td>
           </tr>
           <tr>
             <td># of Students with D</td>
-            <td><font color = "red">8</font></td>
+            <td id = "new9"><font color = "red">8</font></td>
           </tr>
           <tr>
             <td># of Students with F</td>
-            <td><font color = "red">0</font></td>
+            <td id = "new10"><font color = "red">0</font></td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="col-sm-4">
-      <div id="chartContainer" style="height:400px; width:100%;" />
+      <div id="chartContainer" style="height:400px; width:100%;"/>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4" style="padding-bottom:20px">
+        <a href="assignment_view.html" class="btn btn-success btn-block" role="button">Confirm</a>
     </div>
   </div>
 </div>
 </body>
+<script>
+var flip = 0;
+window.onload = function() {
+  showGraph();
+  $('#new').toggle();
+  $('#new1').toggle();
+  $('#new2').toggle();
+  $('#new3').toggle();
+  $('#new4').toggle();
+  $('#new5').toggle();
+  $('#new6').toggle();
+  $('#new7').toggle();
+  $('#new8').toggle();
+  $('#new9').toggle();
+  $('#new10').toggle();
+}
+adjustGrades =  function() {
+    showGraph2();
+    if (flip === 0){
+      $('#new').toggle();
+      $('#new1').toggle();
+      $('#new2').toggle();
+      $('#new3').toggle();
+      $('#new4').toggle();
+      $('#new5').toggle();
+      $('#new6').toggle();
+      $('#new7').toggle();
+      $('#new8').toggle();
+      $('#new9').toggle();
+      $('#new10').toggle();
+      flip++;
+    }
+}
+</script>
 </html>
