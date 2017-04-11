@@ -8,9 +8,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="jquery-3.2.0.min.js"></script>
   <!--graph stuff-->
   <script type="text/javascript">
-    window.onload = function () {
+    showGraph = function () {
         var chart = new CanvasJS.Chart("chartContainer",
         {
             theme: "theme1",
@@ -61,6 +62,7 @@
 
 chart.render();
 }
+
 </script>
   <style>
     .affix {
@@ -154,11 +156,17 @@ chart.render();
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $( "input" ).change(function() {
+  showGraph();
+});
+</script>
 <div class="container">
   <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4" style="padding-bottom:20px">
-        <button type="submit" class="btn btn-success btn-block">Submit</button>
+        <a href="class_overview.html" class="btn btn-success btn-block" role="button">Submit Grades</a>
     </div>
   </div>
 </div>
