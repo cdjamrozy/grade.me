@@ -1,40 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Class Overview</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
 
 <div class="jumbotron text-center">
-  <h1>DO YOUR SHIT, YOU GOONS</h1>
-  <p>Jk, Good luck bois</p>
-  <p>Resize this responsive page to see the effect!</p>
+<a style="position: absolute; top: 5px; left: 5px" href="student_class_select.html">Back</a>
+  <h1>Class Overview</h1>
+  <p>CS 465</p>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    <div class="col-sm-6">
+      <h4>Overall Grade: 89.14% (312/350)</h4>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse1">Exams</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">
+                <a  class="btn btn-success btn-block" role="button">Exam 1</a>
+                <p> Score: 90% (90/100) </p>
+                <a class="btn btn-success btn-block" role="button">Exam 2</a>
+                <p> Score: 90% (90/100) </p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse2">Homework Assignments</a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse">
+              <div class="panel-body">
+                <a class="btn btn-success btn-block" role="button">Homework 1</a>
+                <p> Score: 90% (45/50) </p>
+                <a class="btn btn-success btn-block" role="button">Homework 2</a>
+                <p> Score: 90% (27/30) </p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse3">Project Deliverables</a>
+              </h4>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse">
+              <div class="panel-body">
+                <a  class="btn btn-success btn-block" role="button">Meet with TA</a>
+                <p> Score: 100% (20/20) <p>
+                <a  class="btn btn-success btn-block" role="button">Proposal</a>
+                <p> Score: 80% (40/50) </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="col-sm-6">
+      <h4>Assignments</h4>
+        <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapse22">Homework</a>
+            </h4>
+          </div>
+          <div id="collapse22" class="panel-collapse collapse">
+            <div class="panel-body">
+              <a href="assignment_upload.html" class="btn btn-warning btn-block" role="button">Homework 3</a>
+              <p> Due: 4/12/17 10:59 AM </p>
+              <a href="assignment_upload.html" class="btn btn-warning btn-block" role="button">Homework 4</a>
+              <p> Due: 4/19/17 10:59 AM </p>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion2" href="#collapse23">Project Deliverables</a>
+            </h4>
+          </div>
+          <div id="collapse23" class="panel-collapse collapse">
+            <div class="panel-body">
+              <a href="assignment_upload.html" class="btn btn-warning btn-block" role="button">Interactive Prototype</a>
+              <p> Due: 4/12/17 10:59 AM </p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
+    <a  href="contact_ta.html" class="btn btn-primary btn-block" role="button">Contact Instructor</a>
   </div>
 </div>
-
 </body>
 </html>

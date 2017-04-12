@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact Instructor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://raw.githubusercontent.com/bootstrap-tagsinput/bootstrap-tagsinput/master/dist/bootstrap-tagsinput.min.js" type="application/json"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+<a style="position: absolute; top: 5px; left: 5px" href="student_start.html">Back</a>
+  <h1>Contact Instructor</h1>
+</div>
+
+<div class="container">
+
+
+<form>
+
+<form>
+  <div class="form-group">
+  <label for="f0">Instructor:</label>
+    <select class="form-control" id="f0">
+      <option>Adam</option>
+      <option>Bob</option>
+      <option>Caroline</option>
+      <option>4</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="f1">Subject</label>
+    <input type="text" class="form-control" id="f1">
+  </div>
+  <div class="form-group">
+    <label for="f2">Body</label>
+    <textarea rows=10 class="form-control" id="f2"></textarea>
+  </div>
+</form>
+<button type="submit" class="btn btn-primary" id="button">Send</button>
+
+<script>
+  $('#button').on('click', function () {
+    $('#f0').prop('disabled', true);
+    $('#f1').prop('disabled', true);
+    $('#f2').prop('disabled', true);
+    $(this).html('Sent');
+    $(this).prop('disabled', true);
+  });
+</script>
+
+</div>
+</body>
+</html>

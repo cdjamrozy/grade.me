@@ -1,67 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Grade Enter</title>
+  <title>Homework 3</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
-  <!--graph stuff-->
-  <script type="text/javascript">
-    window.onload = function () {
-        var chart = new CanvasJS.Chart("chartContainer",
-        {
-            theme: "theme1",
-                        animationEnabled: true,
-            title:{
-                text: "Grade Distribution",
-                fontSize: 30
-            },
-            toolTip: {
-                shared: true
-            },
-            axisY: {
-                title: "Number of Students",
-                interval: 20
-            },
-            axisY2: {
-                interval: 20
-            },
-            data: [
-            {
-                type: "column",
-                name: "Old Grades",
-                legendText: "Old Grades",
-                showInLegend: false,
-                dataPoints:[
-                {label: "A", y: 62},
-                {label: "B", y: 78},
-                {label: "C", y: 80},
-                {label: "D", y: 42},
-                {label: "F", y: 12},
-                ]
-            }
 
-            ],
-          legend:{
-            cursor:"pointer",
-            itemclick: function(e){
-              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                e.dataSeries.visible = false;
-              }
-              else {
-                e.dataSeries.visible = true;
-              }
-                chart.render();
-            }
-          },
-        });
-
-chart.render();
-}
-</script>
   <style>
     .affix {
         top: 30px;
@@ -72,61 +20,46 @@ chart.render();
 <body>
 
 <div class="jumbotron text-center">
-  <h1>Assignment Upload</h1>
+<a style="position: absolute; top: 5px; left: 5px" href="student_start.html">Back</a>
+  <h1>Homework 3</h1>
 </div>
 
 <div class="container">
+
     
-    
-    <div class="row">
+  <div class="row">
+    <div class="col-sm-3"></div>
         <div class="col-sm-6">
               
           <table class = "table">
             <thead>
                 <tr>
-                    <th>Element</th>
-                    <th>Deadline</th>
-                    <th>Upload</th>
-                    <th>Pts</th>
                 </tr>
             </thead>
             <tbody>
 
                 <form>
                     <tr>
-                        <td>Assignment part0</td>
-                        <td>1/2/17</td>
-                        <td>graded.txt</td>
-                        <td>10</td>
-                        <td><a href="assignment_graded.html" class="btn btn-success btn-block" role="button">8/10</a></td>
-                    </tr>
-                    <tr>
-                        <td>Assignment part1</td>
-                        <td>1/3/17</td>
+                        <td>Report</td>
                         <td><form action="upload.php" method="post" enctype="multipart/form-data">
                             <input type="file" name="fileToUpload" id="fileToUpload">
                             </form>
                         </td>
-                        <td>10</td>
-                        <td><a href="assignment_upload_success.html" class="btn btn-success btn-block" role="button">Upload</a></td>
+                        <td><a href="assignment_upload_success.html" class="btn btn-primary btn-block" role="button">Upload</a></td>
                     </tr>
                     <tr>
-                        <td>Assignment part2</td>
-                        <td>1/4/17</td>
+                        <td>Presentation</td>
                         <td><form action="upload.php" method="post" enctype="multipart/form-data">
                             <input type="file" name="fileToUpload" id="fileToUpload">
                             </form>
                         </td>
-                        <td>10</td>
-                        <td><a href="assignment_upload_success.html" class="btn btn-success btn-block" role="button">Upload</a></td>
+                        <td><a href="assignment_upload_success.html" class="btn btn-primary btn-block" role="button">Upload</a></td>
                     </tr>
                      
                     <tr>
-                        <td>Material</td>
-                        <td>N/A</td>
-                        <td>question_sheet.pdf</td>
-                        <td>N/A</td>
-                        <td><a class="btn btn-success btn-block" role="button">Download</td>
+                        <td>Handout</td>
+                        <td>homework3.pdf</td>
+                        <td><a class="btn btn-primary btn-block" role="button">Download</td>
                     </tr>
                     
 
@@ -137,15 +70,6 @@ chart.render();
         </div>
     
   </div>
-  <div class="row2">
-    <form>
-        <td>
-            Description:
-        </td> 
-        <td>
-            This is difficult, very difficult assignment.
-        </td>   
-    </form>
     
 </div>
 </div>
