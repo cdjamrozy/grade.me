@@ -9,6 +9,33 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script>
+  google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawGraphs);
+
+      function drawGraphs() {
+        drawCurrent();
+        drawGradeVisualization1();
+      }
+
+      function drawCurrent() {
+
+      }
+
+      function drawPredicted(){
+
+      }
+
+      function drawGradeVisualization1() {
+        
+      }
+
+  </script>
+  <script>
+  switchGraphs = function(){
+    drawPredicted();
+  }
+  </script>
 </head>
 <body>
 
@@ -25,12 +52,39 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-sm-3">
+      <table class = "table">
+        <thead>
+            <tr>
+                <th>Assignment</th>
+                <th>Expected Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form>
+                <tr>
+                    <td>Homework 3</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+                <tr>
+                    <td>Homework 4</td>
+                    <td><input type="number" class="form-control" id="grade" max="100" min="0"></td>
+                </tr>
+                <tr>
+                    <td>Interactive Prototype</td>
+                    <td><input type="number" class="form-control" id="grade"></td>
+                </tr>
+            </form>
+        </tbody>
+      </table>
+      <button type="button" class="btn btn-success center-block" onclick="switchGraphs()">Predict</button>
+    </div>
     <div class="col-sm-6">
-      
+      <div id="chart_div"></div>
     </div>
 
-    <div class="col-sm-6">
-      
+    <div class="col-sm-3">
+      <div id="chart_div2"></div>
     </div>
   </div>
 </div>
