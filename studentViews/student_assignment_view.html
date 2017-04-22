@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment View</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <!--graph stuff-->
+  <script type="text/javascript">
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer",
+        {
+            theme: "theme1",
+                        animationEnabled: true,
+            title:{
+                text: "Grade",
+                fontSize: 30
+            },
+            toolTip: {
+                shared: true
+            },
+            axisY: {
+                title: "Grade",
+                interval: 20
+            },
+            axisY2: {
+                interval: 20
+            },
+            data: [
+            {
+                type: "column",
+                name: "Avergae Grade",
+                legendText: "Average Grade",
+                showInLegend: true,
+                dataPoints:[
+                {label: "Grade", y: 82},
+                ]
+            },
+            {
+                type: "column",
+                name: "Your Grade",
+                legendText: "Your Grade",
+                showInLegend: true,
+                dataPoints:[
+                {label: "Grade", y: 93},
+                ]
+            }
+
+            ],
+          legend:{
+            cursor:"pointer",
+            itemclick: function(e){
+              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+              }
+              else {
+                e.dataSeries.visible = true;
+              }
+                chart.render();
+            }
+          },
+        });
+
+chart.render();
+}
+</script>
+
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <a style="position: absolute; top: 5px; left: 5px" href="student_start.html">Back</a>
+  <h1>Assignment View</h1>
+  <p>Grade: 93 / 100</p>
+</div>
+
+<div class="container" color>
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Rubric</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p>Additional Comments:</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <!--GRAPH WILL GO IN THIS DIV-->
+    <div id="carouselDiv" class="col-sm-6">
+      <div id="chartContainer" style="height:400px; width:75%; align:center;" />
+    </div>
+  </div>
+</div>
+</body>
+</html>
