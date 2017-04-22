@@ -9,6 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script src="jquery-3.2.0.min.js"></script>
   <script>
   google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawGraphs);
@@ -19,11 +21,68 @@
       }
 
       function drawCurrent() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'X');
+        data.addColumn('number', 'My Grades');
+        data.addColumn('number', 'Average Grades');
 
+        data.addRows([
+          ['Homework 1', 87, 82],
+          ['Exam 1', 81, 84],
+          ['Meet with TA', 100, 100],
+          ['Homework 2', 94, 91],
+          ['Proposal', 86, 95],
+          ['Exam 2', 96, 100],
+        ]);
+
+        var options = {
+          hAxis: {
+            title: 'Assignment',
+            logScale: false,
+          },
+          vAxis: {
+            title: 'Assignment',
+            logScale: false
+          },
+          colors: ['#a52714', '#097138']
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
       }
 
       function drawPredicted(){
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'X');
+        data.addColumn('number', 'My Grades');
+        data.addColumn('number', 'Average Grades');
 
+        data.addRows([
+          ['Homework 1', 87, 82],
+          ['Exam 1', 81, 84],
+          ['Meet with TA', 100, 100],
+          ['Homework 2', 94, 91],
+          ['Proposal', 86, 95],
+          ['Exam 2', 96, 100],
+          ['Homework 3', 87, 94],
+          ['User Research', 89, 79],
+          ['Final Exam', 86, 92]
+        ]);
+
+        var options = {
+          hAxis: {
+            title: 'Assignment',
+            logScale: false,
+          },
+          vAxis: {
+            title: 'Assignment',
+            logScale: false
+          },
+          colors: ['#a52714', '#097138']
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+        chart.draw(data, options);
       }
 
       function drawGradeVisualization1() {
@@ -34,6 +93,7 @@
   <script>
   switchGraphs = function(){
     drawPredicted();
+    $('#chart_div').toggle()
   }
   </script>
 </head>
@@ -81,10 +141,11 @@
     </div>
     <div class="col-sm-6">
       <div id="chart_div"></div>
+      <div id="chart_div2"></div>
     </div>
 
     <div class="col-sm-3">
-      <div id="chart_div2"></div>
+      <div id="chart_div3"></div>
     </div>
   </div>
 </div>
