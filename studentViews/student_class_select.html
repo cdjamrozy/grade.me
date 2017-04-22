@@ -7,8 +7,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
+<style>
+#chart_div{
+  height: 400px;
+  width: 100%;
+}
+</style>
 <body>
 
 <div class="jumbotron text-center">
@@ -29,7 +36,43 @@
       <a href="student_start.html" class="btn btn-info btn-lg" role="button">CS 465</a>
     </div>
   </div>
+  <div id="chart_div"></div>
 </div>
+<script>
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawCurveTypes);
 
+function drawCurveTypes() {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Date');
+  data.addColumn('number', 'CS241');
+  data.addColumn('number', 'CS357');
+  data.addColumn('number', 'CS465');
+
+  data.addRows([
+    ['1/15', 100, 100, 100],    ['2/1', 100, 78, 85],   ['2/15', 100, 85, 87],  ['3/1', 95, 88, 90],   ['3/15', 93, 87, 88], ['4/1', 92, 83, 87], ['4/15', 93, 82, 86]  
+  ]);
+
+  var options = {
+    hAxis: {
+      title: 'Date'
+    },
+    vAxis: {
+      title: 'Grade'
+    },
+    series: {
+      1: {curveType: 'function'}
+    },
+    backgroundColor: {
+      fill: 'transparent',
+      opacity: .5
+    }
+  };
+
+  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+}
+</script>
 </body>
 </html>
+
