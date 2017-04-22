@@ -44,6 +44,9 @@
             title: 'Assignment',
             logScale: false
           },
+          backgroundColor: {
+            fill: 'transparent'
+          },
           colors: ['#a52714', '#097138']
         };
 
@@ -78,6 +81,9 @@
             title: 'Assignment',
             logScale: false
           },
+          backgroundColor: {
+            fill: 'transparent'
+          },
           colors: ['#a52714', '#097138']
         };
 
@@ -86,16 +92,137 @@
       }
 
       function drawGradeVisualization1() {
-        
+        var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Grades');
+          data.addColumn('number', 'Current Grade');
+
+          data.addRows([
+            ['', 86]
+          ]);
+
+          var options = {
+          title: 'Grade Prediction',
+          focusTarget: 'category',
+          backgroundColor: {
+            fill: 'transparent'
+          },
+          hAxis: {
+            textStyle: {
+              fontSize: 14,
+              color: '#053061',
+              bold: true,
+              italic: false
+            },
+            titleTextStyle: {
+              fontSize: 18,
+                color: '#053061',
+                bold: true,
+                italic: false
+              }
+            },
+          vAxis: {
+            title: 'Grade',
+            textStyle: {
+              fontSize: 18,
+              color: '#67001f',
+              bold: false,
+              italic: false
+            },
+            titleTextStyle: {
+              fontSize: 18,
+              color: '#67001f',
+              bold: true,
+              italic: false
+            },
+            minValue: 0,
+            maxValue: 100,
+            gridlines: {
+              count: 11
+            }
+          }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
+        chart.draw(data, options);
       }
+      
+
+      function drawGradeVisualization2(){
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawAxisTickColors);
+
+        function drawAxisTickColors() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Grades');
+          data.addColumn('number', 'Current Grade');
+          data.addColumn('number', 'Predicted Grade');
+
+          data.addRows([
+            ['', 86, 89]
+          ]);
+
+          var options = {
+          title: 'Grade Prediction',
+          focusTarget: 'category',
+          backgroundColor: {
+            fill: 'transparent'
+          },
+          hAxis: {
+            textStyle: {
+              fontSize: 14,
+              color: '#053061',
+              bold: true,
+              italic: false
+            },
+            titleTextStyle: {
+              fontSize: 18,
+                color: '#053061',
+                bold: true,
+                italic: false
+              }
+            },
+          vAxis: {
+            title: 'Grade',
+            textStyle: {
+              fontSize: 18,
+              color: '#67001f',
+              bold: false,
+              italic: false
+            },
+            titleTextStyle: {
+              fontSize: 18,
+              color: '#67001f',
+              bold: true,
+              italic: false
+            },
+            minValue: 0,
+            maxValue: 100,
+            gridlines: {
+              count: 11
+            }
+          }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div4'));
+        chart.draw(data, options);
+      }
+    }
 
   </script>
   <script>
   switchGraphs = function(){
     drawPredicted();
+    drawGradeVisualization2();
     $('#chart_div').toggle()
+    $('#chart_div3').toggle()
   }
   </script>
+  <style>
+  .chart{
+    height: 50vh;
+    width: 100%;
+  }
+  </style>
 </head>
 <body>
 
@@ -112,7 +239,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-2">
       <table class = "table">
         <thead>
             <tr>
@@ -140,12 +267,13 @@
       <button type="button" class="btn btn-success center-block" onclick="switchGraphs()">Predict</button>
     </div>
     <div class="col-sm-6">
-      <div id="chart_div"></div>
-      <div id="chart_div2"></div>
+      <div class="chart" id="chart_div"></div>
+      <div class="chart" id="chart_div2"></div>
     </div>
 
-    <div class="col-sm-3">
-      <div id="chart_div3"></div>
+    <div class="col-sm-4">
+      <div class="chart" id="chart_div3"></div>
+      <div class="chart" id="chart_div4"></div>
     </div>
   </div>
 </div>
