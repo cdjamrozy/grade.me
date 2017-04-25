@@ -210,11 +210,15 @@
 
   </script>
   <script>
+  var flip = 0;
   switchGraphs = function(){
-    drawPredicted();
-    drawGradeVisualization2();
-    $('#chart_div').toggle()
-    $('#chart_div3').toggle()
+    if (flip == 0){
+      drawPredicted();
+      drawGradeVisualization2();
+      $('#chart_div').toggle();
+      $('#chart_div3').toggle();
+      flip++;
+    }
   }
   </script>
   <style>
