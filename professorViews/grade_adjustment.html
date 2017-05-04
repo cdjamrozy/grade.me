@@ -13,7 +13,7 @@
   <!--graph stuff-->
   <script type="text/javascript">
     showGraph = function () {
-        CanvasJS.addColorSet("blue", ["#2c74e8"]);
+        CanvasJS.addColorSet("blue", ["#6d7993"]);
         var chart = new CanvasJS.Chart("chartContainer",
         {
 
@@ -53,15 +53,6 @@
             ],
           legend:{
             cursor:"pointer",
-            itemclick: function(e){
-              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                e.dataSeries.visible = false;
-              }
-              else {
-                e.dataSeries.visible = true;
-              }
-                chart.render();
-            }
           },
         });
 
@@ -69,7 +60,7 @@ chart.render();
 }
 
 showGraph2 = function () {
-        CanvasJS.addColorSet("bluered", ["#2c74e8", "#1af437"]);
+        CanvasJS.addColorSet("bluered", ["#6d7993", "#373737"]);
         var chart = new CanvasJS.Chart("chartContainer",
         {
             colorSet: "bluered",
