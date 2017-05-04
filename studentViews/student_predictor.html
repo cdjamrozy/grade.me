@@ -38,16 +38,17 @@
         var options = {
           hAxis: {
             title: 'Assignment',
+
             logScale: false,
           },
           vAxis: {
-            title: 'Assignment',
+            title: 'Grade',
             logScale: false
           },
           backgroundColor: {
             fill: 'transparent'
           },
-          colors: ['#a52714', '#097138']
+          colors: ["#a1bfc6", "#4f4f4f"],
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
@@ -78,13 +79,13 @@
             logScale: false,
           },
           vAxis: {
-            title: 'Assignment',
+            title: 'Grade',
             logScale: false
           },
           backgroundColor: {
             fill: 'transparent'
           },
-          colors: ['#a52714', '#097138']
+          colors: ["#a1bfc6", "#4f4f4f"],
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
@@ -103,6 +104,7 @@
           var options = {
           title: 'Grade Prediction',
           focusTarget: 'category',
+          colors: ["#a1bfc6", "#4f4f4f"],
           backgroundColor: {
             fill: 'transparent'
           },
@@ -124,13 +126,13 @@
             title: 'Grade',
             textStyle: {
               fontSize: 18,
-              color: '#67001f',
+              color: '#000000',
               bold: false,
               italic: false
             },
             titleTextStyle: {
               fontSize: 18,
-              color: '#67001f',
+              color: '#000000',
               bold: true,
               italic: false
             },
@@ -139,6 +141,9 @@
             gridlines: {
               count: 11
             }
+          },
+          legend: {
+            position: 'bottom',
           }
         };
 
@@ -164,19 +169,20 @@
           var options = {
           title: 'Grade Prediction',
           focusTarget: 'category',
+          colors: ["#a1bfc6", "#4f4f4f"],
           backgroundColor: {
             fill: 'transparent'
           },
           hAxis: {
             textStyle: {
               fontSize: 14,
-              color: '#053061',
+              color: '#000000',
               bold: true,
               italic: false
             },
             titleTextStyle: {
               fontSize: 18,
-                color: '#053061',
+                color: '#000000',
                 bold: true,
                 italic: false
               }
@@ -185,13 +191,13 @@
             title: 'Grade',
             textStyle: {
               fontSize: 18,
-              color: '#67001f',
+              color: '#000000',
               bold: false,
               italic: false
             },
             titleTextStyle: {
               fontSize: 18,
-              color: '#67001f',
+              color: '#000000',
               bold: true,
               italic: false
             },
@@ -200,6 +206,9 @@
             gridlines: {
               count: 11
             }
+          },
+          legend: {
+            position: 'bottom',
           }
         };
 
